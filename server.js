@@ -22,6 +22,7 @@ const TIMEOUT = 0;
 const app = express();
 app.use(express.json("application/json"));
 // app.use(cors(corsOptions));
+app.use(cors());
 
 const port = 3001;
 const log = (req, text='') => {
