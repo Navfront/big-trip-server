@@ -80,9 +80,7 @@ app.post('/api/sync', (req, res) => {
 app.post('*', (req, res) => {
   log(req)
   //WIP
-  res.json({
-    message: 'post ok',
-    body: req.body})
+  res.send('Server works!')
 })
 
 app.listen(port, () => {
