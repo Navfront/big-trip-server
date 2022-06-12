@@ -28,6 +28,12 @@ const log = (req, text='') => {
     console.log('method:', req?.method,'from:', req?.headers?.host,  req?.ip, text, req?.body?.id || '', req?.body?.destination?.name || '');
 }
 
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+ });
+
 //all points
 app.get('/api/points', (req, res) => {
   log(req, 'points')
