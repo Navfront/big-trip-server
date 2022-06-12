@@ -83,7 +83,7 @@ app.post('*', (req, res) => {
   res.send('Server works!')
 })
 
-app.listen(port, () => {
+app.listen((process.env.PORT || 5000), () => {
   console.log(`App listening on port ${port}`);
 });
 
